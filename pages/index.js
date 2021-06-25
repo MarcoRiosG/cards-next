@@ -3,8 +3,12 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Deck from '../components/deck/index'
 
+const {
+  GRAPHQL_CONNECTION
+} = process.env
+
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
+  uri: GRAPHQL_CONNECTION,
   cache: new InMemoryCache()
 })
 
